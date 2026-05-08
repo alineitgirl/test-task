@@ -35,3 +35,4 @@ export interface  CardListProps {
 export interface WidgetProps {
     collectionId?: number;
 }
+
