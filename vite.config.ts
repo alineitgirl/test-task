@@ -7,13 +7,8 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: '/test-task',
+  base: '/test-task/',
   build: {
-    lib: {
-      entry: 'src/main.tsx',
-      name: 'MyWidget',
-      fileName: 'widget',
-      formats: ['iife'] 
-    },
+    outDir: 'dist'
   }
 })
