@@ -1,7 +1,7 @@
 # widget-new-items
 
 Встраиваемый виджет для отображения карточек товаров.  
-Получает данные из API, рендерит список с пагинацией и поддерживает вставку на любой сайт одной строкой.
+Получает данные из API и рендерит список с пагинацией.
 
 ---
 
@@ -25,7 +25,7 @@ src/
 │   └── CardList.tsx          # Список карточек, скелетон, состояния загрузки
 ├── styles/
 │   ├── card.module.css       # Стили карточки (CSS Module)
-│   ├── cardList.module.css   # Стили сетки, пагинации, анимаций
+│   ├── cardList.module.css   # Стили слайдера, пагинации, анимаций
 │   └── widget.module.css     # CSS-переменные, общий reset
 ├── types/
 │   └── index.ts              # TypeScript-интерфейсы (Product, Tag, Collection)
@@ -58,26 +58,6 @@ npm run dev
 npm run build
 ```
 
-После сборки в папке `dist/` появятся два файла:
-
-- `widget.iife.js` — весь JavaScript виджета
-- `widget.css` — все стили
-
----
-
-## Подключение на сайт
-
-Вставь две строки в любой HTML-файл:
-
-```html
-<link rel="stylesheet" href="https://твой-юзер.github.io/widget-new-items/widget.css">
-<script src="https://твой-юзер.github.io/widget-new-items/widget.iife.js"></script>
-```
-
-Виджет автоматически создаст контейнер и вставит карточки на страницу.
-
----
-
 ## Переменные окружения
 
 Создай файл `.env` в корне проекта:
@@ -98,12 +78,9 @@ const BASE_URL = import.meta.env.VITE_API_URL
 
 ## Деплой на GitHub Pages
 
-Пуш в ветку `main` запускает автоматический деплой через GitHub Actions.  
-Конфиг находится в `.github/workflows/deploy.yml`.
-
 После деплоя виджет доступен по адресу:
 ```
-https://твой-юзер.github.io/widget-new-items/
+https://твой-юзер.github.io/test-task/
 ```
 
 ---
@@ -133,13 +110,14 @@ https://твой-юзер.github.io/widget-new-items/
 |------|-----|----------|
 | `name` | `string` | Название товара |
 | `slug` | `string` | URL-идентификатор |
+| `category_name`| `string` | Название категории
 | `price` | `number` | Цена |
 | `old_price` | `number \| null` | Старая цена (если есть скидка) |
 | `credit_text` | `string \| null` | Текст рассрочки |
 | `stock_status` | `StockStatus` | Статус наличия |
 | `preview_image` | `string` | URL картинки |
 | `tags` | `Tag[]` | Массив тегов |
-
+| `discount_type` | `string` | Тип скидки (если есть скидка)
 ---
 
 ## Типы
@@ -167,7 +145,8 @@ interface Product {
   stock_status: StockStatus
   is_favorite: boolean
   preview_image: string
-  tags: Tag[]
+  tags: Tag[],
+  discount_type: string
 }
 ```
 
@@ -179,13 +158,10 @@ interface Product {
 
 | Переменная | Значение по умолчанию | Описание |
 |---|---|---|
-| `--w-bg-card` | `#ffffff` | Фон карточки |
-| `--w-bg-image` | `#f7f7f7` | Фон картинки |
-| `--w-text-primary` | `#1a1a1a` | Основной текст |
-| `--w-text-secondary` | `#666666` | Вторичный текст |
-| `--w-text-muted` | `#aaaaaa` | Приглушённый текст |
-| `--w-stock-in` | `#2d7a3a` | Цвет "В наличии" |
-| `--w-stock-low` | `#b45309` | Цвет "Мало" |
-| `--w-stock-out` | `#c0392b` | Цвет "Нет в наличии" |
-| `--w-badge-bg` | `#fff3cd` | Фон бейджа рассрочки |
-| `--w-badge-text` | `#856404` | Текст бейджа рассрочки |
+| `--primary-blue` | `#0090ff` | Основной голубой |
+| `--primary-bg` | `#f5f5f5` | Фон картинки |
+| `--primary-dark` | `#1a1a1a` | Основной текст |
+| `--primary-border` | `#e0e0e0` | Цвет границы карточки |
+| `--primary-green` | `#00c48c` | Цвет "В наличии" |
+| `--primary-orange` | `#ffa800` | Цвет "Мало" |
+| `--primary-red` | `#ff4d4f` | Цвет "Нет в наличии" |

@@ -14,9 +14,6 @@
     --secondary-text: #aeaeb2;;
     --secondary-dark: #2b3545;
     --light-dark: #003a66;
-    --top-safe-area: 16px;
-    --sticky-position: 96px;
-    --top-safe-area: 16px;
     font-family: Inter;
 }
 
@@ -24,7 +21,6 @@
     background-color: var(--primary-bg);
     font-family: Inter;
     margin: 15px;
-    width: var(--horizontal-safe-area);
 }
 
 .sectionName {
