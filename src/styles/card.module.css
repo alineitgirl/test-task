@@ -1,0 +1,252 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/Inter.ttf') format('TrueType');
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg);
+    outline: 1px solid var(--primary-border);
+    border-radius: 16px;
+    transition: background-color 300ms, outline-color 300ms;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    background-color: var(--primary-dark);
+    outline: 2px solid var(--primary-blue);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card::nth-last-child {
+    margin-right: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.imageContainer {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    background: var(--primary-border);
+    padding: 4px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: fill;
+}
+
+.imageHoverContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10%;
+    height: 10%;
+    padding: 12px;
+    border-radius: 12px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageHoverIcon {
+    background: var(--primary-border);
+    border-radius: 12px;
+    flex: 1;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: auto;
+}
+
+.imageHoverIcon:hover {
+    background: var(--primary-blue);
+}
+
+.badgeContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+.tagContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.tagBadge {
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    border-radius: 100vw;
+    font-size: .75em;
+    line-height: 1.3em;
+    color: #fff;
+}
+
+.productDescription {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px 16px;
+}
+
+.stockContainer {
+    font-size: .75em;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.stockIcon {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.categoryName {
+    font-size: .9em;
+    line-height: 1.6em;
+    color: var(--secondary-text);
+    transition: color 300ms;
+    margin: 0px;
+}
+
+.smartphoneContainer {
+    position: relative  ;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    min-height: 30px;
+}
+
+.smartphoneName {
+    line-height: 1.3em;
+    font-weight: 600;
+    color: var(--primary-dark);
+    font-size: 1.1em;
+    width: 100%;
+}
+
+.smartphoneNameHovered {
+    color: var(--primary-bg);
+}
+
+.creditText {
+    padding: 4px;
+    align-self: flex-start;
+    font-size: .75em;
+    line-height: 1.3em;
+    color: var(--primary-dark);
+    border-radius: 8px;
+    background: var(--primary-orange);
+    margin-top: auto;
+    margin-bottom: 6px;
+}
+
+.priceContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: auto;
+    padding: 0px;
+    gap: 0px;
+}
+
+.oldPrice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.1em;
+    line-height: 1em;
+    color: var(--secondary-text);
+    text-decoration: line-through;
+    flex-basis: 100%;
+    padding: 0;
+    margin-top: 6px;
+}
+
+.price {
+    font-size: 1.5em;
+    line-height: 1.3em;
+    font-weight: 900;
+    color: var(--primary-dark);
+    transition: color 300ms;
+    margin-top: 0px;
+    padding: 0;
+}
+
+.rup {
+    font-weight: 400;
+}
+
+.priceHovered {
+    color: var(--primary-bg);
+}
+
+.shopIcon {
+    justify-content: center;
+    height: 44px;
+    aspect-ratio: 1;
+    border-radius: 12px;
+    color: #fff;
+    background-color: var(--primary-blue);
+    cursor: pointer;
+    transition: color 300ms, background-color 300ms;
+}
+
+.shopIconImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: fill;
+}
+
+.shopContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+.favoriteIcon {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 300ms, background-color 300ms;
+}
+
+.favoriteIcon {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 300ms, background-color 300ms;
+}
+
+.comparisonIcon {
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color 300ms, background-color 300ms;
+}

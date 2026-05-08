@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Inter'; 
+    src: url('fonts/Inter.ttf') format('TrueType');
+}
+
+.widgetRoot {
+    --primary-blue: #0090ff;
+    --primary-bg: #f5f5f5;
+    --primary-dark: #1a1a1a;
+    --primary-border: #e0e0e0;
+    --primary-green: #00c48c;
+    --primary-orange: #ffa800;
+    --primary-red: #ff4d4f;
+    --secondary-text: #aeaeb2;;
+    --secondary-dark: #2b3545;
+    --light-dark: #003a66;
+    --top-safe-area: 16px;
+    --sticky-position: 96px;
+    --top-safe-area: 16px;
+    font-family: Inter;
+}
+
+.widgetRoot {
+    background-color: var(--primary-bg);
+    font-family: Inter;
+    margin: 15px;
+    width: var(--horizontal-safe-area);
+}
+
+.sectionName {
+    font-size: 1.9em;
+    line-height: 1.1em;
+    color: var(--primary-dark);
+    padding: 0;
+    margin: 0;
+}
+
+.sectionContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pagination {
+    font-size: 1em;
+    font-weight: 500;
+    color: #000000;
+    min-width: 40px;
+    text-align: center;
+}
+
+.button {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--primary-border);
+    color: var(--primary-dark);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 300ms, color 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover:not(:disabled) {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.backIcon {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+
+.forwardIcon {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
